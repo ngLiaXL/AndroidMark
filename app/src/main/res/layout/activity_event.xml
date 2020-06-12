@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.androidmark.event.ViewGroup01 xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="600dp"
+    android:background="#00f"
+    android:orientation="vertical"
+    tools:context=".event.EventActivity">
+
+
+    <com.example.androidmark.event.ViewGroup02
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:background="#0f0">
+
+        <com.example.androidmark.event.View01
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#f00" />
+
+    </com.example.androidmark.event.ViewGroup02>
+
+</com.example.androidmark.event.ViewGroup01>

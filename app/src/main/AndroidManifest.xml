@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".security.SecurityActivity" />
+        <activity android:name=".event.EventActivity" />
     </application>
 
 </manifest>

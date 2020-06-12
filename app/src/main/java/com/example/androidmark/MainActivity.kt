@@ -2,9 +2,9 @@ package com.example.androidmark
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.androidmark.event.EventActivity
 import com.example.androidmark.security.SecurityActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,18 +18,23 @@ class MainActivity : BaseActivity() {
         mainRecyclerView.adapter = adapter
 
         adapter.onItemChildClickListener =
-            BaseQuickAdapter.OnItemChildClickListener() { _, view, position ->
+            BaseQuickAdapter.OnItemChildClickListener() { _, _, position ->
                 val action = adapter.getItem(position)?.cls
                 startActivity(Intent(this@MainActivity, action))
 
             }
         addFunction(adapter)
+
     }
 
     private fun addFunction(adapter: Adapter) {
         adapter.addData(Item("Security", SecurityActivity::class.java))
+        adapter.addData(Item("Event", EventActivity::class.java))
     }
 
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+    }
 
     class Adapter : BaseQuickAdapter<Item, BaseViewHolder>(R.layout.layout_fun_item) {
 
