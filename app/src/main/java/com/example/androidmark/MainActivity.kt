@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.androidmark.calendar.CalendarActivity
 import com.example.androidmark.event.EventActivity
 import com.example.androidmark.security.SecurityActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,6 +31,8 @@ class MainActivity : BaseActivity() {
     private fun addFunction(adapter: Adapter) {
         adapter.addData(Item("Security", SecurityActivity::class.java))
         adapter.addData(Item("Event", EventActivity::class.java))
+        adapter.addData(Item("CustomView", CustomViewActivity::class.java))
+        adapter.addData(Item("Calendar", CalendarActivity::class.java))
     }
 
     override fun onUserInteraction() {

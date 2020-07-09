@@ -10,6 +10,7 @@
 
     <com.example.androidmark.event.ViewGroup02
         android:layout_width="300dp"
+        android:visibility="invisible"
         android:layout_height="500dp"
         android:background="#0f0">
 
