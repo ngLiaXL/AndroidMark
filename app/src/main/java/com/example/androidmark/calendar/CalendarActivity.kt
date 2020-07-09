@@ -8,6 +8,15 @@ import com.example.androidmark.BaseActivity
 import com.example.androidmark.R
 import com.haibin.calendarview.CalendarView
 
+/**
+ * 周视图显示N周
+
+1、调整WeekViewPager高度 重写onMeasure方法  N * mItemHeight
+2、调整BaseWeekView高度 重写onMeasure方法  N * mItemHeight
+3、重写WeekView onDraw 方法 并将 onDrawSelected、onDrawScheme、onDrawText 都加上y坐标 参考MonthView
+4、调整 CalendarLayout  mContentViewTranslateY 可滑动Y距离   - N * mItemHeight
+5、调整 initCalendarForWeekView weekEndDiff 值 加上 (N-1) * 7
+ */
 class CalendarActivity : BaseActivity() {
 
 
