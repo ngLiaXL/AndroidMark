@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#fff"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
@@ -22,10 +22,8 @@
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="15dp"
             app:calendar_height="54dp"
+            android:paddingBottom="30dp"
             app:current_month_text_color="#333333"
             app:day_text_size="16sp"
             app:lunar_text_size="8sp"
@@ -47,17 +45,13 @@
             app:year_view_month_text_size="20sp"
             app:year_view_scheme_color="#f17706" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="#f8f8f8" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/layout_fun_item" />
+
     </com.haibin.calendarview.CalendarLayout>
 
 </LinearLayout>

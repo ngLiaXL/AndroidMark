@@ -511,7 +511,7 @@ public class CalendarLayout extends LinearLayout {
                     return false;
                 }
 
-                if (Math.abs(dy) > Math.abs(dx) ) { //纵向滑动距离大于横向滑动距离,拦截滑动事件
+                if (Math.abs(dy) > Math.abs(dx)) { //纵向滑动距离大于横向滑动距离,拦截滑动事件
                     if ((dy > 0 && mContentView.getTranslationY() <= 0)
                             || (dy < 0 && mContentView.getTranslationY() >= -mContentViewTranslateY)) {
                         mLastY = y;
@@ -571,6 +571,10 @@ public class CalendarLayout extends LinearLayout {
             heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
         }
 
+        LinearLayout.LayoutParams calendarViewParams = (LinearLayout.LayoutParams) mCalendarView.getLayoutParams();
+        int calendarViewPaddingV = mCalendarView.getPaddingTop() + mCalendarView.getPaddingBottom();
+        int calendarViewMarginV = calendarViewParams.bottomMargin + calendarViewParams.topMargin;
+
         int h;
         if (mCalendarShowMode == CALENDAR_SHOW_MODE_ONLY_MONTH_VIEW ||
                 mCalendarView.getVisibility() == GONE) {
@@ -579,10 +583,10 @@ public class CalendarLayout extends LinearLayout {
             if (isExpand()) {
                 h = height - monthHeight;
             } else {
-                h = height - weekBarHeight - mItemHeight;
+                h = height - weekBarHeight - mItemHeight * WEEK_VIEW_LINE - calendarViewMarginV - calendarViewPaddingV;
             }
         } else {
-            h = height - weekBarHeight - mItemHeight;
+            h = height - weekBarHeight - mItemHeight * WEEK_VIEW_LINE - calendarViewMarginV - calendarViewPaddingV;
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int heightSpec = MeasureSpec.makeMeasureSpec(h,
